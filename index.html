@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PyleaMUN 2027 Student Officer Interview Guide</title>
+<style>
+:root {
+  --bg: #f7f1e7;
+  --panel: #fffdf8;
+  --ink: #18212d;
+  --muted: #607086;
+  --teal: #005b70;
+  --teal-dark: #003f50;
+  --burgundy: #7f1726;
+  --gold: #d29b17;
+  --line: #e3d8c7;
+  --shadow: 0 10px 28px rgba(25, 25, 25, .08);
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #fffaf1 0, var(--bg) 42%, #f3eadf 100%);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 16px;
+}
+.wrapper {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 14px 14px 84px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  align-items: center;
+  background: linear-gradient(135deg, #fffefa, #f7ecda);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+.logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #ecdcc1;
+  padding: 4px;
+}
+.eyebrow {
+  margin: 0 0 2px;
+  color: var(--burgundy);
+  font-weight: 800;
+  letter-spacing: .08em;
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0;
+  color: var(--teal-dark);
+  font-size: clamp(1.45rem, 7vw, 2.6rem);
+  line-height: 1.05;
+}
+.compiled {
+  margin: 8px 0 0;
+  font-size: .95rem;
+  color: var(--muted);
+  font-weight: 650;
+}
+.helper {
+  background: rgba(255, 255, 255, .74);
+  border: 1px solid var(--line);
+  color: #536173;
+  border-radius: 16px;
+  padding: 11px 13px;
+  margin: 10px 0 14px;
+  font-size: .96rem;
+}
+.section, .subsection, .qa {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 10px 0;
+  box-shadow: 0 5px 18px rgba(20, 20, 20, .055);
+  overflow: hidden;
+}
+.section > summary, .subsection > summary, .qa > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 15px 16px;
+  font-weight: 800;
+  color: var(--teal-dark);
+}
+.section > summary {
+  background: linear-gradient(135deg, #ffffff, #f8efe1);
+  font-size: 1.07rem;
+  color: var(--burgundy);
+}
+.subsection > summary {
+  background: #ffffff;
+}
+.qa > summary {
+  color: #263343;
+  font-weight: 750;
+  font-size: .98rem;
+}
+
+.guideline > summary {
+  color: var(--burgundy);
+  background: linear-gradient(135deg, #ffffff, #fff7eb);
+}
+.guideline .inside {
+  border-top: 1px solid var(--line);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--burgundy);
+  background: #f5ead7;
+  border: 1px solid #ead9bd;
+  font-weight: 900;
+}
+details[open] > summary::after { content: "−"; }
+.section-body, .inside, .answer {
+  padding: 0 14px 14px;
+}
+.section-body { background: #fffdfa; }
+.inside { background: #fffdfa; }
+.answer {
+  border-top: 1px solid var(--line);
+  background: #fffaf0;
+  color: #324152;
+  padding-top: 12px;
+}
+.card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--gold);
+  border-radius: 16px;
+  padding: 13px 14px;
+  margin: 10px 0;
+}
+.card h3 {
+  margin: 0 0 8px;
+  color: var(--burgundy);
+  font-size: 1rem;
+}
+h4 {
+  margin: 12px 0 6px;
+  color: var(--teal-dark);
+  font-size: .95rem;
+}
+p { margin: 8px 0; }
+ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+li { margin: 7px 0; }
+.script {
+  margin: 10px 0;
+  padding: 12px 13px;
+  border-radius: 14px;
+  background: #f2f8fa;
+  border: 1px solid #cfe3e8;
+  color: #123f4c;
+  font-weight: 650;
+}
+.note {
+  color: var(--muted);
+  font-size: .93rem;
+}
+.question-only {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin: 10px 0;
+  padding: 14px;
+  font-weight: 750;
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(255, 253, 248, .96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  color: var(--teal-dark);
+  text-align: center;
+  font-size: .82rem;
+  font-weight: 750;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+}
+@media (min-width: 760px) {
+  .wrapper { padding-top: 24px; }
+  .hero { grid-template-columns: 100px 1fr; padding: 20px; }
+  .logo { width: 100px; height: 100px; border-radius: 24px; }
+  .section > summary { font-size: 1.18rem; }
+}
+@media print {
+  body { background: #fff; }
+  .wrapper { width: 100%; padding: 0; }
+  .hero, .section, .subsection, .qa, .card { box-shadow: none; break-inside: avoid; }
+  footer { position: static; }
+  details { border-color: #ccc; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<header class="hero">
+<img alt="PyleaMUN logo" class="logo" onerror="this.style.display='none'; this.parentElement.style.gridTemplateColumns='1fr';" src="logo.png"/>
+<div>
+<p class="eyebrow">PyleaMUN 2027</p>
+<h1>Student Officer Interview Guide</h1>
+<p class="compiled">Compiled by: Alexandros Potolios, Nickolas Loukas, Panagiotis Domvros</p>
+</div>
+</header>
+<main>
+<details class="section"><summary>Part I: Interviewer Guidelines</summary><div class="section-body"><details class="subsection guideline"><summary>If the applicant gives a very good answer</summary><div class="inside"><ul><li>“Thank you, that was a very well-developed response.”</li><li>“Interesting perspective, I appreciate the level of detail.”</li><li>“You explained your reasoning clearly.”</li><li>“Thank you, that demonstrates a good understanding of the matter.”</li><li>“Very good, let’s move on to the next question.”</li></ul></div></details><details class="subsection guideline"><summary>If the applicant gives an average answer</summary><div class="inside"><ul><li>“Thank you, that was helpful.”</li><li>“Interesting point.”</li><li>“I understand your reasoning.”</li><li>“Thank you for your response.”</li></ul></div></details><details class="subsection guideline"><summary>If the applicant does not know the answer</summary><div class="inside"><h4>If they say: “I don’t know.”</h4><ul><li>“That’s completely fine, let’s proceed to the next question.”</li><li>“No worries, we are not expecting perfection.”</li><li>“Thank you for your honesty, let’s move forward.”</li><li>“That is understandable; we’ll continue.”</li></ul><h4>If they say: “I’m not entirely sure, but I think…”</h4><ul><li>“Thank you for attempting an answer.”</li><li>“We appreciate that you tried to reason through it.”</li><li>“Good effort, let’s continue.”</li></ul></div></details><details class="subsection guideline"><summary>If the applicant is very nervous</summary><div class="inside"><ul><li>“Take your time; there is no need to rush.”</li><li>“Feel free to think for a moment before answering.”</li><li>“No pressure, we’re simply trying to get to know you better.”</li><li>“You may take a few seconds if needed.”</li></ul></div></details><details class="subsection guideline"><summary>If the applicant gives an incorrect answer</summary><div class="inside"><p class="note">Avoid saying “That is wrong”.</p><ul><li>“Thank you for your perspective.”</li><li>“Interesting approach.”</li><li>“I understand your reasoning.”</li><li>“Thank you, let’s move on.”</li></ul></div></details><details class="subsection guideline"><summary>If clarification is necessary</summary><div class="inside"><ul><li>“Could you explain your thought process?”</li><li>“Would you like to elaborate a bit further?”</li></ul></div></details><details class="subsection guideline"><summary>If the applicant gives a very short answer</summary><div class="inside"><ul><li>“Could you expand on that a bit more?”</li><li>“Would you like to explain your reasoning further?”</li><li>“Could you give us an example?”</li><li>“Can you develop your answer a little more?”</li></ul></div></details></div></details>
+<details class="section"><summary>Part II: Standard Interview Question Sets</summary><div class="section-body"><details class="subsection"><summary>1st Section – Self Introduction</summary><div class="inside"><article class="card"><h3>Opening script</h3><div class="script">“Firstly, (NAME), to kick things off we would like to get to know you better, so please go ahead and introduce yourself to the panel.”</div></article><article class="card"><h3>Questions</h3><ul><li>Tell us a bit about yourself and your MUN journey so far. OR</li><li>Tell us about an experience that was particularly stressful and involved multiple tasks at once, and how you handled it.</li><li>What do you believe is the most important quality a Student Officer should have?</li><li>How do you plan to balance academic/school obligations with your preparations for PyleaMUN 2027?</li></ul></article></div></details><details class="subsection"><summary>2nd Section – Rules of Procedure (ROPs) &amp; Chairing</summary><div class="inside"><article class="card"><h3>Section script</h3><p>In this section, the applicant will be asked questions concerning the PyleaMUN Rules of Procedure. The interviewer responsible for this section will proceed with questions regarding the applicant’s preferred committees, as well as one question concerning a specialized agency.</p><div class="script">“I will now proceed with the next part of the interview, where I would like to focus on the Rules of Procedure and committee management. What is the committee in which you long for this role?”</div></article><details class="subsection"><summary>Group A</summary><div class="inside"><details class="qa"><summary>What is a Point of Personal Privilege and can it interrupt a speaker?</summary><div class="answer">Used for personal discomfort, e.g., cannot hear. It can ONLY interrupt a speaker if it concerns audibility.</div></details><details class="qa"><summary>What information must a delegate provide when proposing a Moderated Caucus?</summary><div class="answer">Total duration, individual speaking time, and the topic.</div></details><details class="qa"><summary>What is the difference between substantive and procedural voting?</summary><div class="answer">Procedural is for motions/structure and everyone must vote. Substantive is for draft resolutions/amendments and delegates can abstain.</div></details><div class="question-only">What is a Friendly Amendment?</div></div></details><details class="subsection"><summary>Group B</summary><div class="inside"><details class="qa"><summary>What is the difference between a Point of Order and a Point of Parliamentary Inquiry?</summary><div class="answer">Point of Order is to point out a mistake in the ROPs made by the Chair or a delegate. Parliamentary Inquiry is to ask the Chair a question regarding the ROPs.</div></details><details class="qa"><summary>What is the difference between Adjournment of the Meeting and Adjournment of the Debate?</summary><div class="answer">Adjournment of the Meeting ends the session for the day/conference. Adjournment of the Debate pauses the current topic to move to another.</div></details><details class="qa"><summary>What is an Unfriendly Amendment?</summary><div class="answer">Unfriendly is not agreed upon by all main submitters and requires a committee vote.</div></details><details class="qa"><summary>What voting options are available to delegates?</summary><div class="answer">Yes, No, Abstain; sometimes Yes with Rights/No with Rights.</div></details></div></details><details class="subsection"><summary>Group C</summary><div class="inside"><details class="qa"><summary>What is a Point of Parliamentary Inquiry and can it interrupt a speaker?</summary><div class="answer">It is to ask the Chair a question regarding the ROPs and cannot interrupt the speaker.</div></details><details class="qa"><summary>What information is required for an Unmoderated Caucus motion?</summary><div class="answer">Duration.</div></details><details class="qa"><summary>What is voting by roll call?</summary><div class="answer">It is typically used during substantive voting. The Chair calls the roll in alphabetical order, and each delegate must state their vote aloud for the official record.</div></details><details class="qa"><summary>What is the difference between Adjournment of the Meeting and Adjournment of the Debate?</summary><div class="answer">Adjournment of the Meeting ends the session for the day/conference. Adjournment of the Debate pauses the current topic to move to another.</div></details></div></details><details class="subsection"><summary>Security Council</summary><div class="inside"><details class="qa"><summary>Can a P5 member veto a procedural vote? Does an abstention count as a veto?</summary><div class="answer">No to both. Vetoes only apply to substantive votes, and an abstention allows the resolution to pass.</div></details><details class="qa"><summary>Which states are the Permanent Members and which are the current Non-Permanent Members of the Security Council?</summary><div class="answer">Permanent Members: China, France, Russian Federation, United Kingdom, United States. Current Non-Permanent Members: Denmark, Greece, Pakistan, Panama, Somalia, Bahrain, Colombia, Democratic Republic of the Congo, Latvia, Liberia.</div></details><details class="qa"><summary>What is the veto power?</summary><div class="answer">The veto power is the exclusive right of the council's five permanent members to unilaterally block any substantive resolution or decision, regardless of how much global support the measure has.</div></details></div></details><details class="subsection"><summary>NATO</summary><div class="inside"><details class="qa"><summary>How are decisions traditionally made in NATO?</summary><div class="answer">Consensus.</div></details><details class="qa"><summary>What should happen if one member objects to a proposal in NATO?</summary><div class="answer">The decision fails.</div></details><details class="qa"><summary>What does consensus mean in a NATO simulation?</summary><div class="answer">All member states must agree on a decision before it can pass. There is no majority voting.</div></details></div></details></div></details><details class="subsection"><summary>3rd Section – Agenda</summary><div class="inside"><article class="card"><h3>Section script</h3><p>In this section, the applicant will be asked to briefly explain the topics of their preferred committees and provide constructive ideas on how these matters could best be addressed.</p><div class="script">“I will now carry on with the next part of the interview concerning the topics of your preferred committees.”</div><div class="script">“I would like you to briefly explain the first topic of the xxx committee. OR What solutions or proposals would you suggest in order to resolve these matters?”</div></article><details class="subsection"><summary>Committee Question Bank</summary><div class="inside"><details class="subsection"><summary>Security Council 1 (UNSC)</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>If a highly realistic deep fake video of a head of state declaring war were released, should the international community treat the creator as a conventional aggressor/offender?</strong></p><p>Should weigh the “epistemic threat” and intent to incite kinetic conflict vs. the difficulty of attribution and non-physical nature of the threat.</p></article><article class="card"><h3>Topic 2</h3><p><strong>At what point does delegating military decisions to AI become incompatible with international humanitarian law?</strong></p><p>When there is a loss of “meaningful human control” over lethal autonomous systems, risking “flash wars”.</p></article></div></details><details class="subsection"><summary>Security Council 2 (UNSC)</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Should states be held legally responsible for cyber operations conducted by private contractors acting on their behalf?</strong></p><p>Delegates must address the “plausible deniability” these “digital mercenaries” provide and debate legal accountability.</p></article><article class="card"><h3>Topic 2</h3><p><strong>What criteria should determine whether a cyberattack constitutes an “armed attack” under the UN Charter?</strong></p><p>Look at the severity of the target, such as national power grids or banking systems, and the resulting physical/economic damage.</p></article></div></details><details class="subsection"><summary>Committee on Digital Affairs &amp; Sovereignty</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Can meaningful cyber-sovereignty exist without fragmenting the internet into isolated national networks?</strong></p><p>Balance binding rules for Tech Giants, algorithmic transparency, data ownership, and open digital infrastructure.</p></article><article class="card"><h3>Topic 2</h3><p><strong>Should governments have the authority to regulate data transmitted through privately owned satellite internet systems operating over their territory?</strong></p><p>Balance global connectivity against state information control, national firewalls, and orbital safety.</p></article></div></details><details class="subsection"><summary>ECOSOC</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>How can governments protect workers from AI-driven displacement without stifling technological innovation?</strong></p><p>Manage the shift in the “Truth Economy”, protect IP from being scraped without consent, and manage labour market shifts.</p></article><article class="card"><h3>Topic 2</h3><p><strong>Can decentralized financial systems (DeFi) realistically be regulated without undermining the very principle of decentralization?</strong></p><p>Address shadow banking and threats to developing nations while acknowledging that the assets are designed to be outside state control.</p></article></div></details><details class="subsection"><summary>UNESCO</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Who should have the authority to determine what constitutes a historically accurate representation in virtual environments?</strong></p><p>Create frameworks to ensure AI does not erase historical truths of marginalized communities or lead to “digital revisionism”.</p></article><article class="card"><h3>Topic 2</h3><p><strong>Should indigenous communities have the right to prohibit AI systems from using their cultural knowledge for training purposes?</strong></p><p>Yes, frameworks must be created to stop the harvesting of oral histories without consent and to protect endangered languages.</p></article></div></details><details class="subsection"><summary>UN Environment Programme (UNEP)</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Should corporations face international legal penalties for deliberately misleading the public about their environmental impact?</strong></p><p>Address “greenwashing” and ensure global climate goals are based on facts, not manipulated marketing.</p></article><article class="card"><h3>Topic 2</h3><p><strong>How can the international community regulate the immense energy consumption required for AI development and crypto-mining?</strong></p><p>Formulate international standards for sustainable digital infrastructure to offset the massive carbon footprint of data centers.</p></article></div></details><details class="subsection"><summary>World Health Organisation (WHO)</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Where should the balance lie between protecting youth mental health and preserving freedom of expression on social media?</strong></p><p>Formulate guidelines to combat algorithmic diet trends and body dysmorphia without overly censoring user content.</p></article><article class="card"><h3>Topic 2</h3><p><strong>How can the WHO effectively combat “medical populism” when public trust in evidence-based science is eroding?</strong></p><p>Create a unified response to health-related “fake news” that impacts global health security and pandemic preparedness.</p></article></div></details><details class="subsection"><summary>Human Rights Council (HRC)</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>How can the UN protect journalists when states use “fake news” laws to legally silence dissent?</strong></p><p>Address digital authoritarianism, surveillance, and state-mandated internet shutdowns to protect truth-tellers.</p></article><article class="card"><h3>Topic 2</h3><p><strong>How do we balance the right to erase one’s digital past with the public’s right to an accurate historical record?</strong></p><p>Navigate the legal tension between individual privacy and the transparency needed for public accountability.</p></article></div></details><details class="subsection"><summary>UN WOMEN</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Should platforms be held directly liable for AI-generated non-consensual intimate content (deep fakes) shared on their services?</strong></p><p>Address how digital tools are weaponized to silence women and the need to combat online misogyny.</p></article><article class="card"><h3>Topic 2</h3><p><strong>Can AI-driven hiring systems ever be truly free from gender bias, and if not, what safeguards should exist?</strong></p><p>Create ethical AI guidelines to ensure automated systems do not reinforce financial or workforce discrimination.</p></article></div></details><details class="subsection"><summary>SOCHUM</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>Could digital citizenship become a viable substitute for traditional nationality for stateless persons, or would it create new forms of exclusion?</strong></p><p>Ensure biometric ID serves as a tool for inclusion, not surveillance, for those lacking traditional state documents.</p></article><article class="card"><h3>Topic 2</h3><p><strong>How can the UN prevent “digital colonialism” regarding the mass-scraping of indigenous cultural data?</strong></p><p>Formulate rights-based frameworks so digital platforms do not perpetuate colonial power dynamics by taking data without consent.</p></article></div></details><details class="subsection"><summary>UNODC</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>How can governments combat dark-web criminal markets for synthetic narcotics without compromising citizens’ digital privacy rights?</strong></p><p>Develop international strategies to track “cyber-syndicates” while maintaining human rights online.</p></article><article class="card"><h3>Topic 2</h3><p><strong>Should governments ever negotiate or pay ransomware groups when critical public infrastructure is at risk?</strong></p><p>Develop shared legal protocols to protect public hospitals and utilities from transnational extortion.</p></article></div></details><details class="subsection"><summary>NATO</summary><div class="inside"><article class="card"><h3>Topic 1</h3><p><strong>How should the Alliance respond to non-kinetic “cognitive warfare” aimed at eroding trust in democratic institutions?</strong></p><p>Formulate strategies against social media bots and information warfare that target the mind as a domain of war.</p></article><article class="card"><h3>Topic 2</h3><p><strong>What measures can be taken to physically secure transatlantic data cables from state-sponsored sabotage?</strong></p><p>Ensure the continuity of intelligence sharing by protecting the undersea physical backbone of the internet.</p></article></div></details></div></details></div></details><details class="subsection"><summary>4th Section – Crisis Situation</summary><div class="inside"><article class="card"><h3>Section script</h3><p>In this section, the applicant will be expected to provide effective ideas on how they would manage potential situations they may encounter as a Student Officer during PyleaMUN. The interviewer responsible for this section will present two scenarios from the list below:</p><div class="script">“Now moving on to the next part of the interview, as you may know, a Student Officer is expected to be capable of handling situations that may arise during committee sessions.”</div><p>With that being said, how would you deal with:</p></article><details class="qa"><summary>A delegate being visibly upset and crying.</summary><div class="answer">Immediately pause, gently ask the delegate to step outside with a member of the admin staff or co-chair, ensure their privacy, comfort them, and notify the Secretariat/Advisors. Do not draw committee attention to them.</div></details><details class="qa"><summary>A delegate feeling that they have been insulted by another committee member.</summary><div class="answer">Remind the committee of diplomatic courtesy. If it was severe, issue a warning to the offending delegate. Speak to both privately during a break to mediate.</div></details><details class="qa"><summary>A delegate being completely unprepared for the conference.</summary><div class="answer">Do not embarrass them. During unmoderated caucuses, guide them towards delegates with similar policies, offer them a template for clauses, and gently encourage them to read their study guide.</div></details><details class="qa"><summary>A delegate being disrespectful towards the procedure and the rest of the committee.</summary><div class="answer">Issue a firm verbal warning. If the behavior continues, revoke their speaking rights temporarily. If it escalates, involve the Secretariat.</div></details><details class="qa"><summary>A delegate makes an insensitive joke regarding a sensitive global issue, e.g., violence, racism, misogyny.</summary><div class="answer">Intervene calmly and immediately. Remind the room of the seriousness of the topic and set expectations for respectful debate. Speak privately to the delegate and involve senior staff if necessary.</div></details></div></details><details class="subsection"><summary>5th Section – UN Knowledge / Current Affairs</summary><div class="inside"><article class="card"><h3>Section script</h3><p>In this section, the applicant will be asked questions regarding real UN knowledge and current international affairs. The interviewer responsible for this section will ask two questions: one concerning UN knowledge and one concerning current affairs.</p><div class="script">“I will now move on to the next part of the interview concerning the United Nations and current affairs.”</div></article><div class="question-only">Who is your favorite UN Secretary-General and why?</div><details class="qa"><summary>What are the main differences between the Security Council and the General Assembly?</summary><div class="answer">SC has 15 members, can pass legally binding resolutions, and has P5 veto power. GA has all member states, passes non-binding recommendations, and has no veto.</div></details><details class="qa"><summary>What are the six principal organs of the United Nations?</summary><div class="answer">General Assembly, Security Council, Economic and Social Council, Trusteeship Council, International Court of Justice, UN Secretariat.</div></details><details class="qa"><summary>What is the main purpose of the UN Charter?</summary><div class="answer">To maintain international peace and security, develop friendly relations among nations, and promote social progress and human rights.</div></details><details class="qa"><summary>What is the Universal Declaration of Human Rights (UDHR) and when was it adopted?</summary><div class="answer">A milestone document proclaiming the inalienable rights of all human beings, adopted in 1948.</div></details><details class="qa"><summary>Which states are the Permanent Members and which are the current Non-Permanent Members of the Security Council?</summary><div class="answer">Permanent Members: China, France, Russian Federation, United Kingdom, United States. Current Non-Permanent Members: Denmark, Greece, Pakistan, Panama, Somalia, Bahrain, Colombia, Democratic Republic of the Congo, Latvia, Liberia.</div></details><article class="card"><h3>Current Affairs Questions</h3><p>Current affairs questions will be decided during the interview period.</p></article></div></details><details class="subsection"><summary>6th Section – Closure</summary><div class="inside"><article class="card"><h3>Section script</h3><p>This is the final section of the interview and will be carried out by the interviewer responsible for the first section. The interviewer will proceed with two questions: one intended to reveal the applicant’s personality traits and one concerning their motivation for applying.</p><div class="script">“Moving back to me, this will be the last—and perhaps more enjoyable—part of the interview.”</div><p>I would like you to briefly state your reason for applying and explain why we should choose you over another applicant.</p></article><ul><li>At the end of the conference, what do you want delegates to remember from your committee?</li><li>What do you consider your greatest strength and your greatest weakness as a potential Chair?</li><li>Lastly, if you were an animal, which animal would you be and why?</li></ul><div class="script">“Do you have any questions for us? This concludes the interview. Thank you for your time and for your application. You will be notified of the results through email by the Secretariat within the next few days.”</div></div></details></div></details>
+<details class="section"><summary>Historical Crisis Committees: Interview Questions &amp; Expected Answers</summary><div class="section-body"><details class="subsection"><summary>1. Core Historical Crisis Chairing Skills</summary><div class="inside"><details class="subsection"><summary>1.1 General Historical Crisis Committee Mindset</summary><div class="inside"><details class="qa"><summary>What makes a Historical Crisis Committee different from a regular MUN committee?</summary><div class="answer">A strong answer should mention that a Historical Crisis Committee is more dynamic, role-based, and time-sensitive than a regular committee. Delegates do not only debate long-term policy; they also react to sudden developments, submit directives, use private crisis notes, and make choices under pressure. The Chair must manage both historical atmosphere and crisis consequences.</div></details><details class="qa"><summary>How much freedom should delegates have to change history, and where should the dais set limits?</summary><div class="answer">Delegates should have meaningful freedom within historically plausible boundaries. They may alter outcomes, alliances, strategies, and decisions, but they should not ignore basic historical realities, technology, geography, political structures, or the powers of their assigned role. The dais should reward creative plausibility, not fantasy.</div></details><details class="qa"><summary>How would you balance historical accuracy with delegate creativity?</summary><div class="answer">The guide should provide a historically accurate starting point, clear role powers, and realistic constraints. During the committee, delegates should be free to explore alternative outcomes, but every action should have believable causes and consequences. The Chair should guide, not force, history.</div></details><details class="qa"><summary>What should delegates learn from a Historical Crisis Committee beyond simply “winning” the simulation?</summary><div class="answer">They should learn historical thinking, decision-making under pressure, the consequences of misinformation, ethical leadership, compromise, and the difficulty of acting with incomplete knowledge. The goal is not just victory but understanding complexity.</div></details></div></details><details class="subsection"><summary>1.2 Chairing, Procedure, and Committee Control</summary><div class="inside"><details class="qa"><summary>How would you open the first session in a way that immediately establishes atmosphere and authority?</summary><div class="answer">A strong candidate should propose a short, dramatic opening statement that sets the historical scene, reminds delegates of the stakes, and explains the committee’s immediate mission. The Chair should sound confident, organised, and historically immersive without wasting time.</div></details><details class="qa"><summary>How would you explain the difference between a Draft Resolution, a Directive, and a Private Crisis Note to first-time delegates?</summary><div class="answer">A Draft Resolution is a formal long-term document. A Directive is a short, immediate action plan used during a crisis. A Private Crisis Note is secret communication with the crisis staff, usually using a delegate’s specific role, asset, or portfolio power.</div></details><details class="qa"><summary>Explain the difference between a Directive and a Draft Resolution.</summary><div class="answer">A Draft Resolution is formal, long-term, and usually includes preambulatory and operative clauses. A Directive is short, immediate, and action-oriented, used to respond quickly to crisis developments.</div></details><details class="qa"><summary>What would you do if the committee becomes chaotic during a crisis update?</summary><div class="answer">The Chair should pause debate, restate the crisis clearly, set a time limit, define the expected output, and guide delegates into blocs or working groups. The Chair should not shout or improvise wildly; they should restore structure.</div></details><details class="qa"><summary>How would you keep quieter or less experienced delegates involved in a fast-moving crisis?</summary><div class="answer">The Chair can call on them during moderated caucus, assign them useful procedural roles, encourage bloc leaders to include them, ask targeted questions, and design crisis updates that require input from different types of delegates rather than only the loudest ones.</div></details><details class="qa"><summary>What would you do if delegates are not producing any meaningful documents or decisions?</summary><div class="answer">The Chair should clarify the task, give a document template, set a deadline, and possibly introduce a crisis update that forces decision-making. The goal is to move from general debate to concrete written action.</div></details></div></details></div></details><details class="subsection"><summary>2. Committee 1: The Chernobyl Disaster / The Cuban Missile Crisis</summary><div class="inside"><details class="subsection"><summary>2.1 The Chernobyl Disaster: The Cost of Lies</summary><div class="inside"><details class="qa"><summary>What should be the central dilemma of a Chernobyl crisis simulation?</summary><div class="answer">The central dilemma is whether authorities prioritise public safety and scientific truth or political reputation and secrecy. Delegates must decide how much to reveal, when to evacuate, how to contain radiation, and how to manage international scrutiny.</div></details><details class="qa"><summary>How would you represent the conflict between containing radiation and containing information?</summary><div class="answer">Radiation should spread according to physical reality, while information spreads through reports, rumours, foreign detection, media pressure, and internal bureaucracy. Attempts to hide the disaster may buy political time but worsen health, trust, and diplomatic consequences.</div></details><details class="qa"><summary>How would you handle a delegate who wants to hide the disaster completely from the public?</summary><div class="answer">A strong Chair should allow the attempt if it fits the role, but impose realistic consequences: radiation readings abroad, rumours from workers, worsening casualties, delayed evacuation, international suspicion, and loss of trust. Hiding the truth should be playable, but not consequence-free.</div></details><details class="qa"><summary>How would you connect Chernobyl to the idea of “epistemic security”?</summary><div class="answer">Epistemic security means protecting the conditions under which people can know what is true. Chernobyl shows that suppressing facts can become a security threat because bad information leads to bad decisions, public harm, and institutional collapse.</div></details></div></details><details class="subsection"><summary>2.2 The Cuban Missile Crisis: SIGINT and Brinkmanship</summary><div class="inside"><article class="card"><h3>Key concept</h3><p>Information brinkmanship and the management of signal intelligence: a crisis where leaders must make dangerous decisions using incomplete intelligence, while sending and interpreting signals carefully enough to avoid accidental nuclear war.</p></article><details class="qa"><summary>What should be the central dilemma of a Cuban Missile Crisis simulation?</summary><div class="answer">The central dilemma is how to prevent nuclear war while acting on incomplete intelligence and under political pressure. Delegates must decide when to signal strength, when to compromise, and how to avoid miscalculation.</div></details><details class="qa"><summary>How would you prevent the committee from becoming a simple USA versus USSR debate?</summary><div class="answer">Cuba, allies, military factions, diplomats, intelligence agencies, and domestic political pressures should all matter. The committee should not only ask “Who wins?” but “How do leaders interpret dangerous signals under pressure?”</div></details></div></details></div></details><details class="subsection"><summary>3. Committee 2: Special Tribunal on Intellectual &amp; Political Subversion</summary><div class="inside"><details class="subsection"><summary>3.1 Tribunal Design</summary><div class="inside"><details class="qa"><summary>How is a historical tribunal different from a normal crisis committee?</summary><div class="answer">A tribunal focuses on argument, evidence, testimony, judgment, and legal or moral reasoning. It can still include crisis elements, but the main structure is not only policy debate; it is a contested case.</div></details><details class="qa"><summary>How would you stop the trial from becoming a scripted theatre performance?</summary><div class="answer">Delegates should have flexible roles, uncertain evidence, strategic choices, and opportunities to challenge testimony. The dais should avoid giving a fixed ending. The trial should be structured, but the result should depend on delegate performance.</div></details><details class="qa"><summary>What should the final output of the committee be: a verdict, legal opinion, decree, political settlement, or public statement?</summary><div class="answer">A strong answer should justify the chosen output. For a tribunal, a verdict or legal opinion is essential, but it may be accompanied by a decree, public statement, or settlement explaining the political consequences of the judgment.</div></details></div></details><details class="subsection"><summary>3.2 Aspasia of Miletus: Character Assassination as a Political Weapon</summary><div class="inside"><details class="qa"><summary>What should be the central dilemma of the Aspasia trial?</summary><div class="answer">The central dilemma is whether the trial is a genuine moral/legal case or a political attack using morality and reputation as weapons. Delegates must examine personal freedom, public morality, gender, and power in democratic Athens.</div></details><details class="qa"><summary>How would you show that the case is not only about Aspasia personally, but also about political attacks on Pericles and his circle?</summary><div class="answer">The guide and crisis updates should show Aspasia’s connection to elite politics, intellectual life, and Pericles’ enemies. The prosecution may use her reputation to weaken Pericles indirectly, while the defence should expose the political motives behind the accusations.</div></details><details class="qa"><summary>How would you represent character assassination and gendered disinformation in a historically plausible way?</summary><div class="answer">The committee should use rumours, speeches, social reputation, comic exaggeration, and accusations of impiety or improper influence. However, it should avoid modern language that feels anachronistic unless carefully explained.</div></details></div></details><details class="subsection"><summary>3.3 Hypatia of Alexandria: Scientific Truth vs. Religious Populism</summary><div class="inside"><details class="qa"><summary>What should be the central dilemma of the Hypatia defence?</summary><div class="answer">The central dilemma is whether a public intellectual can survive in a politically unstable society where knowledge, religion, civic authority, and mob pressure are intertwined. The case should ask whether fear can turn learning into “subversion.”</div></details><details class="qa"><summary>How would you frame the conflict between scientific truth and religious populism without making the committee anti-religious?</summary><div class="answer">The conflict should not be presented as “science good, religion bad.” Instead, it should focus on political manipulation, public fear, factional rivalry, and the misuse of religious language for power. Religious actors should be diverse, not one-dimensional.</div></details></div></details></div></details><details class="subsection"><summary>4. Scenario-Based Interview Questions</summary><div class="inside"><details class="subsection"><summary>4.1 Crisis Staff Judgement</summary><div class="inside"><details class="qa"><summary>A delegate submits a historically impossible action but explains it very persuasively. What do you do?</summary><div class="answer">The Chair should praise the creativity but reject or modify the action to fit historical plausibility. The candidate should not allow impossible technology, impossible authority, or unrealistic power simply because the delegate argues well.</div></details><details class="qa"><summary>Strong delegates are dominating private notes, while weaker delegates are being ignored. How do you rebalance the committee?</summary><div class="answer">The dais can slow down note processing, create role-specific opportunities, ask quieter delegates for input, design updates that require overlooked portfolios, and encourage public coalition-building. The Chair should not punish strong delegates, but should widen participation.</div></details><details class="qa"><summary>A delegate makes an insensitive joke about radiation sickness, nuclear war, misogyny, or religious violence. What do you do?</summary><div class="answer">The Chair should intervene calmly and immediately. They should remind the room of the seriousness of the topic, set expectations for respectful debate, and, if necessary, speak privately to the delegate or involve senior staff. The issue should not be ignored.</div></details></div></details></div></details><details class="subsection"><summary>5. Practical Tasks for Candidates</summary><div class="inside"><details class="subsection"><summary>5.1 Core Procedure Check</summary><div class="inside"><details class="qa"><summary>In two minutes, explain the difference between a Directive and a Draft Resolution.</summary><div class="answer">A Draft Resolution is formal, long-term, and usually includes preambulatory and operative clauses. A Directive is short, immediate, and action-oriented, used to respond quickly to crisis developments.</div></details></div></details></div></details><details class="subsection"><summary>6. Reflection and Suitability Questions</summary><div class="inside"><details class="subsection"><summary>6.1 Candidate Suitability</summary><div class="inside"><details class="qa"><summary>Why do you want to serve as a Student Officer in a Historical Crisis Committee?</summary><div class="answer">A strong answer should show genuine interest in history, crisis debate, leadership, and helping delegates learn. It should not focus only on status or title.</div></details><details class="qa"><summary>Which of the two 2027 Historical Crisis Committees are you more suited to chair, and why?</summary><div class="answer">The candidate should connect their strengths to the committee’s demands. Committee 1 requires fast crisis management, intelligence handling, and information control. Committee 2 requires legal structure, sensitivity, evidence management, and strong moderation.</div></details><details class="qa"><summary>Which topic would be most difficult for you personally, and why?</summary><div class="answer">A strong candidate should answer honestly and show self-awareness. They should identify a challenge and explain how they would prepare for it.</div></details><details class="qa"><summary>What is your greatest strength and your greatest weakness as a potential Chair?</summary><div class="answer">The answer should be specific. Good strengths include organisation, calmness, historical knowledge, fairness, or public speaking. Good weaknesses should be realistic but manageable, followed by a plan for improvement.</div></details><details class="qa"><summary>At the end of the conference, what should delegates remember from your committee?</summary><div class="answer">They should remember that history is shaped by difficult choices, limited information, power, fear, and responsibility. They should feel that their decisions mattered and that the committee was both intellectually serious and memorable.</div></details></div></details></div></details></div></details>
+</main>
+</div>
+<footer>Designed by Panagiotis Domvros, President of PyleaMUN</footer>
+<script>
+// Keep the page tidy on mobile: opening a main section closes the others.
+document.querySelectorAll('main > details.section').forEach(section => {
+  section.addEventListener('toggle', () => {
+    if (section.open) {
+      document.querySelectorAll('main > details.section').forEach(other => {
+        if (other !== section) other.open = false;
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
